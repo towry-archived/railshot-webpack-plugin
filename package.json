@@ -1,0 +1,30 @@
+{
+  "name": "railshot-webpack-plugin",
+  "version": "1.0.0",
+  "description": "Wepback plugin that works with `webpackrails` ruby gem.",
+  "main": "index.js",
+  "scripts": {
+    "test": "cd test && webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/towry/railshot-webpack-plugin.git"
+  },
+  "keywords": [
+    "webpack",
+    "plugin",
+    "rails"
+  ],
+  "author": "Towry Wang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/towry/railshot-webpack-plugin/issues"
+  },
+  "homepage": "https://github.com/towry/railshot-webpack-plugin#readme",
+  "dependencies": {
+    "deps-webpack-plugin": "*"
+  },
+  "devDependencies": {
+    "webpack": "*"
+  }
+}
