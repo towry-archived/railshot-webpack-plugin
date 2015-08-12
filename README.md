@@ -17,9 +17,8 @@ Your `webpack.config.js` file
 ```js
 var railshotPlugin = require('railshot-webpack-plugin');
 
+// no entry here
 module.exports = {
-  entry: './entry.js',
-
   plugins: [
     railshotPlugin()
   ]
