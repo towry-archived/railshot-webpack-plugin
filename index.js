@@ -20,12 +20,16 @@ function callback (deps) {
   var tmpPath = process.env['WR_TMP_FILE'], tmpFile;
 
   deps = deps || [];
+  try {
+    if (!tmpPath) {
+      tmpPath = path.join(process.env['RAILS_ROOT'], 'tmp/webpackrails', DEPEN_FILE);
+    }
 
-  if (!tmpPath) {
-    tmpPath = path.join(process.env['RAILS_ROOT'], 'tmp/webpackrails', DEPEN_FILE);
+    tmpFile = fs.openSync(tmpPath, 'w+');
+    fs.writeSync(tmpFile, deps.join('\n'));
+    fs.close(tmpFile);
+  } catch (e) {
+    console.error(e);
+    process.exit(1);
   }
-
-  tmpFile = fs.openSync(tmpPath, 'w+');
-  fs.writeSync(tmpFile, deps.join('\n'));
-  fs.close(tmpFile);
 }
