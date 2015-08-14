@@ -1,6 +1,6 @@
 {
   "name": "railshot-webpack-plugin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Wepback plugin that works with `webpackrails` ruby gem.",
   "main": "index.js",
   "scripts": {
@@ -22,9 +22,7 @@
   },
   "homepage": "https://github.com/towry/railshot-webpack-plugin#readme",
   "dependencies": {
-    "deps-webpack-plugin": "*"
-  },
-  "devDependencies": {
+    "deps-webpack-plugin": "*",
     "webpack": "*"
   }
 }

@@ -21,7 +21,11 @@ var railshotPlugin = require('railshot-webpack-plugin');
 module.exports = {
   plugins: [
     railshotPlugin()
-  ]
+  ],
+
+  webpackrails: {
+    root: 'path_to_your_rails_root_path',   // this is optional
+  }
 }
 ```
 

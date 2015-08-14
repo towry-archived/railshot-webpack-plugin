@@ -16,13 +16,17 @@ module.exports = function (railRoot) {
   return new depsPlugin(callback);
 }
 
-function callback (deps) {
+function callback (deps, options) {
   var tmpPath = process.env['WR_TMP_FILE'], tmpFile;
 
   deps = deps || [];
   try {
     if (!tmpPath) {
-      tmpPath = path.join(process.env['RAILS_ROOT'], 'tmp/webpackrails', DEPEN_FILE);
+      if (options.webpackrails && options.webpackrails.root) {
+        tmpPath = path.join(options.webpackrails.root, 'tmp/webpackrails', DEPEN_FILE);
+      } else {
+        tmpPath = path.join(process.env['RAILS_ROOT'], 'tmp/webpackrails', DEPEN_FILE);
+      }
     }
 
     tmpFile = fs.openSync(tmpPath, 'w+');
